@@ -110,7 +110,7 @@ public class Pile4 implements PileI, Cloneable {
         Maillon maillonInitial = stk;
         String s = "[";
         while (stk != null){
-            s += stk.element();
+            s += (stk.element()==null)? "null":stk.element().toString();
             stk = stk.suivant();
             if(stk!=null) s+=", ";    
         }

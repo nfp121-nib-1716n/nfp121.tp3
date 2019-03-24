@@ -92,7 +92,7 @@ public class Pile2 implements PileI {
             try{
                 tempObject = depiler();
             } catch (PileVideException pve){pve.printStackTrace();}
-            s += tempObject.toString();
+            s += (tempObject==null) ? "null": tempObject.toString();
             try{
                 pileTemp.empiler(tempObject);
             } catch (PilePleineException ppe){ppe.printStackTrace();}
