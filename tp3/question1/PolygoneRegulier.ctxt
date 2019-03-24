@@ -2,7 +2,7 @@
 comment0.target=PolygoneRegulier
 comment1.params=nombreDeCotes\ longueurDuCote
 comment1.target=PolygoneRegulier(int,\ int)
-comment1.text=\r\n\ Cr\u00E9ation\ d'un\ polygone\ r\u00E9gulier\r\n\ \r\n\ @param\ nombreDeCotes\r\n\ \ \ \ \ \ \ \ \ \ \ \ (nombreDeCotes\ >\=1\ &&\ nombreDeCotes\ <100)\r\n\ @param\ longueurDuCote\r\n\ \ \ \ \ \ \ \ \ \ \ \ (longueurDuCote>\=1\ &&\ longueurDuCote\ <\ 10000)\r\n
+comment1.text=\r\n\ Cr\u00C3\u00A9ation\ d'un\ polygone\ r\u00C3\u00A9gulier\r\n\ \r\n\ @param\ nombreDeCotes\r\n\ \ \ \ \ \ \ \ \ \ \ \ (nombreDeCotes\ >\=1\ &&\ nombreDeCotes\ <100)\r\n\ @param\ longueurDuCote\r\n\ \ \ \ \ \ \ \ \ \ \ \ (longueurDuCote>\=1\ &&\ longueurDuCote\ <\ 10000)\r\n
 comment2.params=
 comment2.target=int\ perimetre()
 comment3.params=

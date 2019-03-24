@@ -4,5 +4,5 @@ comment1.params=
 comment1.target=void\ setUp()
 comment2.params=
 comment2.target=void\ testEquals_hashCode()
-comment2.text=\r\n\ la\ r\u00E8gle\ \:\ Objects\ that\ are\ equal\ according\ to\ the\ equals\ method\ must\r\n\ return\ the\ same\ hashCode\ value\ If\ two\ objects\ are\ not\ equal\ according\ to\r\n\ equals,\ they\ are\ not\ required\ to\ return\ different\ hashCode\ values.\ voir\r\n\ http\://java.sun.com/j2se/1.5/docs/api/java/lang/Object.html\#hashCode()\r\n
+comment2.text=\r\n\ la\ r\u00C3\u00A8gle\ \:\ Objects\ that\ are\ equal\ according\ to\ the\ equals\ method\ must\r\n\ return\ the\ same\ hashCode\ value\ If\ two\ objects\ are\ not\ equal\ according\ to\r\n\ equals,\ they\ are\ not\ required\ to\ return\ different\ hashCode\ values.\ voir\r\n\ http\://java.sun.com/j2se/1.5/docs/api/java/lang/Object.html\#hashCode()\r\n
 numComments=3

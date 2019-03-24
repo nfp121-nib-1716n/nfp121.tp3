@@ -1,11 +1,20 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Pile4Test()
-comment0.text=\r\n\ Constructeur\ de\ la\ classe-test\ Pile4Test\r\n
+comment0.target=Pile4Test
+comment0.text=\r\n\ Classe-test\ Pile4Test.\r\n\ \r\n\ @author\ (votre\ nom)\r\n\ @version\ (un\ num\u00C3\u00A9ro\ de\ version\ ou\ une\ date)\r\n\ \r\n\ \ \ \ \ \ \ \ \ \ Les\ classes-test\ sont\ document\u00C3\u00A9es\ ici\ \:\r\n\ \ \ \ \ \ \ \ \ \ http\://junit.sourceforge.net/javadoc/junit/framework/TestCase.html\r\n\ \ \ \ \ \ \ \ \ \ et\ sont\ bas\u00C3\u00A9es\ sur\ le\ document\ \u00C2\u00A9\ 2002\ Robert\ A.\ Ballance\ intitul\u00C3\u00A9\r\n\ \ \ \ \ \ \ \ \ \ \u00C2\u00ABJUnit\:\ Unit\ Testing\ Framework\u00C2\u00BB.\r\n\ \r\n\ \ \ \ \ \ \ \ \ \ Les\ objets\ Test\ (et\ TestSuite)\ sont\ associ\u00C3\u00A9s\ aux\ classes\ \u00C3\u00A0\ tester\r\n\ \ \ \ \ \ \ \ \ \ par\ la\ simple\ relation\ yyyTest\ (e.g.\ qu'un\ Test\ de\ la\ classe\r\n\ \ \ \ \ \ \ \ \ \ Name.java\ se\ nommera\ NameTest.java);\ les\ deux\ se\ retrouvent\ dans\ le\r\n\ \ \ \ \ \ \ \ \ \ m\u00C3\u00AAme\ paquetage.\ Les\ "engagements"\ (anglais\ \:\ "fixture")\ forment\ un\r\n\ \ \ \ \ \ \ \ \ \ ensemble\ de\ conditions\ qui\ sont\ vraies\ pour\ chaque\ m\u00C3\u00A9thode\ Test\ \u00C3\u00A0\r\n\ \ \ \ \ \ \ \ \ \ ex\u00C3\u00A9cuter.\ Il\ peut\ y\ avoir\ plus\ d'une\ m\u00C3\u00A9thode\ Test\ dans\ une\ classe\r\n\ \ \ \ \ \ \ \ \ \ Test;\ leur\ ensemble\ forme\ un\ objet\ TestSuite.\ BlueJ\ d\u00C3\u00A9couvrira\r\n\ \ \ \ \ \ \ \ \ \ automatiquement\ (par\ introspection)\ les\ m\u00C3\u00A9thodes\ Test\ de\ votre\r\n\ \ \ \ \ \ \ \ \ \ classe\ Test\ et\ g\u00C3\u00A9n\u00C3\u00A9rera\ la\ TestSuite\ cons\u00C3\u00A9quente.\ Chaque\ appel\ d'une\r\n\ \ \ \ \ \ \ \ \ \ m\u00C3\u00A9thode\ Test\ sera\ pr\u00C3\u00A9c\u00C3\u00A9d\u00C3\u00A9\ d'un\ appel\ de\ setUp(),\ qui\ r\u00C3\u00A9alise\ les\r\n\ \ \ \ \ \ \ \ \ \ engagements,\ et\ suivi\ d'un\ appel\ \u00C3\u00A0\ tearDown(),\ qui\ les\ d\u00C3\u00A9truit.\r\n
 comment1.params=
 comment1.target=void\ setUp()
-comment1.text=\r\n\ Met\ en\ place\ les\ engagements.\r\n\ \r\n\ M\u00E9thode\ appel\u00E9e\ avant\ chaque\ appel\ de\ m\u00E9thode\ de\ test.\r\n
 comment2.params=
-comment2.target=void\ tearDown()
-comment2.text=\r\n\ Supprime\ les\ engagements\r\n\ \r\n\ M\u00E9thode\ appel\u00E9e\ apr\u00E8s\ chaque\ appel\ de\ m\u00E9thode\ de\ test.\r\n
-numComments=3
+comment2.target=void\ test_Pile_capacite()
+comment3.params=
+comment3.target=void\ test_Pile_estPleine()
+comment4.params=
+comment4.target=void\ test_Pile_sommet()
+comment5.params=
+comment5.target=void\ test_Pile_estVide()
+comment6.params=
+comment6.target=void\ test_Pile_toString()
+comment7.params=
+comment7.target=void\ test_Pile_TailleNegative()
+comment8.params=
+comment8.target=void\ test_Pile_equals()
+numComments=9

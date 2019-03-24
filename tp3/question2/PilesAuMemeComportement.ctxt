@@ -2,12 +2,14 @@
 comment0.target=PilesAuMemeComportement
 comment1.params=
 comment1.target=void\ setUp()
-comment1.text=\r\n\ Met\ en\ place\ les\ engagements.\r\n\r\n\ M\u00E9thode\ appel\u00E9e\ avant\ chaque\ appel\ de\ m\u00E9thode\ de\ test.\r\n
+comment1.text=\r\n\ Met\ en\ place\ les\ engagements.\r\n\r\n\ M\u00C3\u00A9thode\ appel\u00C3\u00A9e\ avant\ chaque\ appel\ de\ m\u00C3\u00A9thode\ de\ test.\r\n
 comment2.params=
 comment2.target=void\ tearDown()
-comment2.text=\r\n\ Supprime\ les\ engagements\r\n\r\n\ M\u00E9thode\ appel\u00E9e\ apr\u00E8s\ chaque\ appel\ de\ m\u00E9thode\ de\ test.\r\n
+comment2.text=\r\n\ Supprime\ les\ engagements\r\n\r\n\ M\u00C3\u00A9thode\ appel\u00C3\u00A9e\ apr\u00C3\u00A8s\ chaque\ appel\ de\ m\u00C3\u00A9thode\ de\ test.\r\n
 comment3.params=
 comment3.target=void\ test_Sommaire()
 comment4.params=
 comment4.target=void\ test_meme_comportement()
-numComments=5
+comment5.params=
+comment5.target=void\ test_equals()
+numComments=6

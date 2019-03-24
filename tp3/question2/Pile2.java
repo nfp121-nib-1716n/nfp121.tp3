@@ -11,6 +11,12 @@ public class Pile2 implements PileI {
 
     /** la capacite de la pile */
     private int capacite;
+    
+    /** Je guardera la valeur de la taille du pile (combien ce pile contient) pour eviter une complexite lineaire lors de l'appel de 
+     * la methode taille()
+     */
+    private int taille;
+    
 
     /**
      * Creation d'une pile.
@@ -19,27 +25,39 @@ public class Pile2 implements PileI {
      *            la taille de la pile, la taille doit etre > 0
      */
     public Pile2(int taille) {
-        // prevoir le cas <=0
-        // a completer
+        if(taille <= 0) 
+            taille = CAPACITE_PAR_DEFAUT;
+        this.stk = new Stack<Object>();
+        this.capacite = taille;
+        this.taille = 0;
     }
 
     // constructeur fourni
     public Pile2() {
-        this(0);
+        this(CAPACITE_PAR_DEFAUT);
     }
 
     public void empiler(Object o) throws PilePleineException {
-        // a completer
+        if(!estPleine()){
+            stk.push(o);
+            taille++;
+        }
+        else throw new PilePleineException();
     }
 
     public Object depiler() throws PileVideException {
-        // a completer
-        return null;
+        if(!estVide()){
+            taille--;
+            return stk.pop();
+        }
+        else throw new PileVideException();
     }
 
     public Object sommet() throws PileVideException {
-        // a completer
-        return null;
+        if(!estVide()){
+            return stk.peek();
+        }
+        else throw new PileVideException();
     }
 
     /**
@@ -48,8 +66,7 @@ public class Pile2 implements PileI {
      * @return vrai si la pile est vide, faux autrement
      */
     public boolean estVide() {
-        // a completer
-        return false;
+        return taille == 0;
     }
 
     /**
@@ -58,8 +75,7 @@ public class Pile2 implements PileI {
      * @return vrai si la pile est pleine, faux autrement
      */
     public boolean estPleine() {
-        // a completer
-        return false;
+        return taille == capacite;
     }
 
     /**
@@ -69,14 +85,79 @@ public class Pile2 implements PileI {
      * @return une representation en String d'une pile
      */
     public String toString() {
+        Pile2 pileTemp = new Pile2(capacite());
+        Object tempObject = new Object();
         String s = "[";
-        // a completer
+        while (!estVide()){
+            try{
+                tempObject = depiler();
+            } catch (PileVideException pve){pve.printStackTrace();}
+            s += tempObject.toString();
+            try{
+                pileTemp.empiler(tempObject);
+            } catch (PilePleineException ppe){ppe.printStackTrace();};
+            if(!estVide())
+                s += ", ";
+        }
+        remplirPile(pileTemp, this);
         return s + "]";
     }
+    
+    private void remplirPile(PileI p1, PileI p2){
+        while(!p1.estVide()){
+            try{
+                p2.empiler(p1.depiler());
+            } catch (PileVideException pve){pve.printStackTrace();}
+            catch (PilePleineException ppe){ppe.printStackTrace();}
+        }
+    }
 
-    public boolean equals(Object o) {
-        // a completer
-        return false;
+    public boolean equals(Object object){
+        //Assurer que l'objet en parametre est une instance d'une classe qui implemente PileI
+        if(!(object instanceof PileI))
+            return false;
+        PileI pile = (PileI)object;
+        
+        //Meme instance?
+        if(super.equals(object))
+            return true;
+        
+        //Comparer les tailles et les capacites
+        int capacite = this.capacite();
+        int taille = this.taille();
+        if(capacite != pile.capacite())
+            return false;
+        if(taille != pile.taille())
+            return false;
+            
+        //Si les piles sont vides, elles sont egaux
+        if(taille == 0) return true;
+        
+        //Comparaison element par element. J'ai considere que les piles sont egaux si leurs sequences d'elements sont egaux.
+        Pile2 tempPile1 = new Pile2(taille);
+        Pile2 tempPile2 = new Pile2(pile.taille());
+        
+        while (!this.estVide() && !pile.estVide()){
+            
+            try{
+                if(this.sommet().equals(pile.sommet())){
+                    tempPile1.empiler(this.depiler());
+                    tempPile2.empiler(pile.depiler());
+                }
+                else{
+                    remplirPile(tempPile1, this);
+                    remplirPile(tempPile2, pile);
+                    return false;
+                }
+            } catch(PilePleineException ppe){ppe.printStackTrace();}
+            catch(PileVideException pve){pve.printStackTrace();}
+        }
+        
+        //Retourner les elements a la pile initiale:
+        remplirPile(tempPile1, this);
+        remplirPile(tempPile2, pile);
+        
+        return true;
     }
 
     // fonction fournie
@@ -90,8 +171,7 @@ public class Pile2 implements PileI {
      * @return le nombre d'element
      */
     public int taille() {
-        // a completer
-        return 0;
+        return this.taille;
     }
 
     /**
@@ -100,8 +180,7 @@ public class Pile2 implements PileI {
      * @return le nombre d'element
      */
     public int capacite() {
-        // a completer
-        return 0;
+        return this.capacite;
     }
-
+   
 } // Pile2.java
