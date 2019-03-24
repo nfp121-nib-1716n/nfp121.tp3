@@ -119,6 +119,8 @@ public class Pile4 implements PileI, Cloneable {
     }
 
     public boolean equals(Object object){
+        if(object == null) return false;
+        
         //Assurer que l'objet en parametre est une instance d'une classe qui implemente PileI
         if(!(object instanceof PileI))
             return false;
@@ -143,13 +145,30 @@ public class Pile4 implements PileI, Cloneable {
         Pile4 tempPile2 = new Pile4(pile.taille());
         Maillon maillonInitial = stk;
         
+        //Pour ne pas recopier du code, j'utilisera un boolean elementsEgaux
+        boolean elementsEgaux;
+        
         while (stk!=null && !pile.estVide()){
             try{
-                if(stk.element().equals(pile.sommet())){
+                elementsEgaux = false;
+                if(this.sommet() == null){
+                    if(pile.sommet() == null) {
+                        elementsEgaux = true;
+                    }
+                }
+                else if(pile.sommet() == null){
+                    if(this.sommet() == null) {
+                        elementsEgaux = true;
+                    }
+                }
+                else if(stk.element().equals(pile.sommet())){
+                    elementsEgaux = true;
+                }
+                if(elementsEgaux){
                     stk = stk.suivant();
                     tempPile2.empiler(pile.depiler());
                 }
-                else{
+                else {
                     stk = maillonInitial;
                     remplirPile(tempPile2, pile);
                     return false;

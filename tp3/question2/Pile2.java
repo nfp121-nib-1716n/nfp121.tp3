@@ -95,7 +95,7 @@ public class Pile2 implements PileI {
             s += tempObject.toString();
             try{
                 pileTemp.empiler(tempObject);
-            } catch (PilePleineException ppe){ppe.printStackTrace();};
+            } catch (PilePleineException ppe){ppe.printStackTrace();}
             if(!estVide())
                 s += ", ";
         }
@@ -113,6 +113,8 @@ public class Pile2 implements PileI {
     }
 
     public boolean equals(Object object){
+        if(object == null) return false;
+        
         //Assurer que l'objet en parametre est une instance d'une classe qui implemente PileI
         if(!(object instanceof PileI))
             return false;
@@ -137,10 +139,26 @@ public class Pile2 implements PileI {
         Pile2 tempPile1 = new Pile2(taille);
         Pile2 tempPile2 = new Pile2(pile.taille());
         
+        //Pour ne pas recopier du code, j'utilisera un boolean elementsEgaux
+        boolean elementsEgaux;
+        
         while (!this.estVide() && !pile.estVide()){
             
             try{
-                if(this.sommet().equals(pile.sommet())){
+                elementsEgaux = false;
+                if(this.sommet() == null){
+                    if(pile.sommet() == null) 
+                        elementsEgaux = true;
+                }        
+                else if(pile.sommet() == null){
+                    if(this.sommet() == null) 
+                        elementsEgaux = true;
+                }  
+                else if(this.sommet().equals(pile.sommet())){
+                    elementsEgaux = true;
+                }
+                
+                if(elementsEgaux){
                     tempPile1.empiler(this.depiler());
                     tempPile2.empiler(pile.depiler());
                 }

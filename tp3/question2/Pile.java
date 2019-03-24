@@ -65,6 +65,8 @@ public class Pile implements PileI {
     }
 
     public boolean equals(Object object){
+        if(object == null) return false;
+        
         //Assurer que l'objet en parametre est une instance d'une classe qui implemente PileI
         if(! (object instanceof PileI))
             return false;
@@ -87,9 +89,26 @@ public class Pile implements PileI {
         
         //Comparaison element par element. J'ai considere que les piles sont egaux si leurs sequences d'elements sont egaux.
         Pile tempPile = new Pile(taille);
+        
+        //Pour ne pas recopier du code, j'utilisera un boolean elementsEgaux
+        boolean elementsEgaux;
+        
         for(int i=taille-1; i>=0 ; i--){
             try{
-                if(pile.sommet().equals(zone[i]))
+                elementsEgaux = false;
+                
+                if(pile.sommet() == null){
+                    if(zone[i] == null) 
+                        elementsEgaux = true;
+                    }   
+                else if(zone[i] == null){
+                    if(pile.sommet() == null) 
+                        elementsEgaux = true;
+                }
+                else if(pile.sommet().equals(zone[i])){
+                    elementsEgaux = true;
+                }
+                if(elementsEgaux)
                     tempPile.empiler(pile.depiler());
                 else{
                     remplirPile(tempPile, pile);
@@ -131,4 +150,5 @@ public class Pile implements PileI {
         sb.append("]");
         return sb.toString();
     }
+    
 }

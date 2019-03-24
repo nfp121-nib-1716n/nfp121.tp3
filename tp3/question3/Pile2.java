@@ -80,7 +80,7 @@ public class Pile2<T> implements PileI<T>{
             s += tempObject.toString();
             try{
                 pileTemp.empiler(tempObject);
-            } catch (PilePleineException ppe){ppe.printStackTrace();};
+            } catch (PilePleineException ppe){ppe.printStackTrace();}
             if(!estVide())
                 s += ", ";
         }
